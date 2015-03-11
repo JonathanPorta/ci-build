@@ -13,5 +13,6 @@ deploy:
     secure: ki6uIaFaL6dwExiC0HpTa5K2+YP8WNeWbjFSZBTZQub4esPYlmkw8JGsqLGOv+1ics2SaL+ZUxyP0ivRfUO3hzvFPuVb/iLU3tvmBJuGmSz411suvCOkK7OOA5gxrUr9oM0Y3Z/827OVHZmUIB2Plun/KU1PZ94KNPFDQce9yQA=
   bucket: dev.jonathan.porta.codes
   local-dir: Build
+  skip_cleanup: true
   on:
     repo: JonathanPorta/ci-build
