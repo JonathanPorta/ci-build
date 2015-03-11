@@ -14,5 +14,6 @@ deploy:
   bucket: dev.jonathan.porta.codes
   local-dir: Build
   skip_cleanup: true
+  acl: public_read
   on:
     repo: JonathanPorta/ci-build
