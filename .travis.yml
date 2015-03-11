@@ -6,10 +6,6 @@ install:
 - ./Scripts/install.sh
 script:
 - ./Scripts/build.sh
-env:
-  global:
-  - secure: CY2vLUAVfJPLpm9voV8tRFQqSUhg5xLvgmHEbutvgwPsO2fNy83aQV5g067kUKN2cHNWwQ2wRWciCQsjeGv3RKZ5/gb8VBGY0rL8qpwXR2OQP/pxOy/JkqprBHK24yOoUUrR0PiNkbiASzE3Uh4DoF9Gu5gCeK56wJ165czFlqY=
-  - secure: d71JzKzJwjZtJH7qZL33eGjKfS8UIPhJpJ3i+BE/UbQIb08nIm3AbBOMEPdQiC2rWy8jj9deoO90IVPvD2udo2VFc876MMxxJI7u+QcqJ6FtM5Zv3/eS1KiPW9xj9/nsW6+YFMpf9Kz0josT8WQmzVY23oBAxSUjWNWiDl7+yVU=
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
@@ -17,6 +13,5 @@ deploy:
     secure: ki6uIaFaL6dwExiC0HpTa5K2+YP8WNeWbjFSZBTZQub4esPYlmkw8JGsqLGOv+1ics2SaL+ZUxyP0ivRfUO3hzvFPuVb/iLU3tvmBJuGmSz411suvCOkK7OOA5gxrUr9oM0Y3Z/827OVHZmUIB2Plun/KU1PZ94KNPFDQce9yQA=
   bucket: dev.jonathan.porta.codes
   local-dir: Build
-  acl: ''
   on:
     repo: JonathanPorta/ci-build
