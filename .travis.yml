@@ -1,5 +1,7 @@
-language: generic
-os: osx
+language: object-c
+os:
+  - linux
+  - osx
 env:
   - PLATFORM=WINDOWS
   - PLATFORM=MACOS
