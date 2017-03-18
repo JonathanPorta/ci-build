@@ -28,7 +28,7 @@ install() {
   else
     echo 'todo: add windows support'
     dir
-    eval `basename "$package"` /S
+    eval ./`basename "$package"` /S
   fi
 }
 
