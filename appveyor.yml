@@ -5,6 +5,6 @@ environment:
   - PLATFORM: MACOS
   - PLATFORM: LINUX
 install:
-- cmd: Scripts/install.sh
+- cmd: bash Scripts/install.sh
 build_script:
-- cmd: Scripts/build.sh
+- cmd: bash Scripts/build.sh
