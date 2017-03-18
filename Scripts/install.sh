@@ -23,7 +23,7 @@ install() {
   download "$package"
 
   echo "Installing "`basename "$package"`
-  if [ $TRAVIS_OS_NAME == "osx" ]; then
+  if [[ $TRAVIS_OS_NAME == "osx" ]]; then
     sudo installer -dumplog -package `basename "$package"` -target /
   else
     echo 'todo: add windows support'
