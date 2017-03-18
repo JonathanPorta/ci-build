@@ -26,8 +26,8 @@ install() {
   if [[ $TRAVIS_OS_NAME == "osx" ]]; then
     sudo installer -dumplog -package `basename "$package"` -target /
   else
-    echo 'todo: add windows support'
-    dir
+    ls -lah
+    pwd
     eval ./`basename "$package"` /S
   fi
 }
