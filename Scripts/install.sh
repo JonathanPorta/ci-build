@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo $TRAVIS_OS_NAME
 if [ $TRAVIS_OS_NAME == "osx" ]; then
   echo 'Installing Unity on macOS'
   # Release details as of 2/24/17: http://download.unity3d.com/download_unity/3829d7f588f3/unity-5.5.2f1-osx.ini
