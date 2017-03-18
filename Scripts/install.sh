@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 # Release details as of 2/24/17: http://download.unity3d.com/download_unity/3829d7f588f3/unity-5.5.2f1-osx.ini
 # Thanks to vergenzt for find this info. Writeup here: https://github.com/JonathanPorta/ci-build/pull/3#issue-132893904
