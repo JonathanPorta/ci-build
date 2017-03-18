@@ -46,9 +46,8 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # Linux install is a bit different
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'
-  inxi -Sr
-  echo 'Update all'
-  sudo apt-get upgrade
+  #echo 'upgrade all'
+  #sudo apt-get upgrade
 
   echo 'Install Mono'
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
