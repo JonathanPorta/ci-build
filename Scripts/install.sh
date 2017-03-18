@@ -47,7 +47,7 @@ elif [ $TRAVIS_OS_NAME == "linux" ]; then
   # Linux install is a bit different
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'
-  curl -o unity.deb http://beta.unity3d.com/download/e06241adb51f/unity-editor_amd64-5.5.2xf1Linux.deb
+  curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   # from http://askubuntu.com/a/841240/310789
   echo 'try first install'
   sudo dpkg -i unity.deb
