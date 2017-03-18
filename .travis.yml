@@ -7,7 +7,7 @@ before_install:
 install:
 - ./Scripts/install.sh
 script:
-- ./Scripts/build.sh
+- bash ./Scripts/build.sh
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
