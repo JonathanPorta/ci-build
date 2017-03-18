@@ -27,6 +27,7 @@ install() {
     sudo installer -dumplog -package `basename "$package"` -target /
   else
     echo 'todo: add windows support'
+    dir
     `basename "$package"` /S
   fi
 }
