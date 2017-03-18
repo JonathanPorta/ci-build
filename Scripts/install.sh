@@ -37,7 +37,7 @@ if [ $TRAVIS_OS_NAME == "osx" ]; then
   install "MacEditorInstaller/Unity.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
-elif [ $TRAVIS_OS_NAME == "windows" ]; then
+elif [ -z ${APPVEYOR+x} ]; then # if $APPVEYOR is set
   echo 'Installing Unity on Windows'
 
   install "Windows64EditorInstaller/UnitySetup64.exe"
@@ -49,8 +49,11 @@ elif [ $TRAVIS_OS_NAME == "linux" ]; then
   echo 'Installing Unity on Linux'
   curl -o unity.deb http://beta.unity3d.com/download/e06241adb51f/unity-editor_amd64-5.5.2xf1Linux.deb
   # from http://askubuntu.com/a/841240/310789
+  echo 'try first install'
   sudo dpkg -i unity.deb
+  echo 'install dep'
   sudo apt-get install -f
+  echo 'try second install'
   sudo dpkg -i unity.deb
   #curl -o `basename install-linux.sh` http://beta.unity3d.com/download/e06241adb51f/unity-editor-installer-5.5.2xf1Linux.sh
   #./install-linux.sh

@@ -13,8 +13,8 @@ if [ -z ${UNITY+x} ]; then
     onpath=true
   else
     #todo: set based on platform
-    UNITY=/Applications/Unity/Unity.app/Contents/MacOS/Unity
-    #UNITY=/c/Program\ Files/Unity/Editor/Unity.exe
+    #UNITY=/Applications/Unity/Unity.app/Contents/MacOS/Unity
+    UNITY=/c/Program\ Files/Unity/Editor/Unity.exe
   fi
 fi
 

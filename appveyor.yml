@@ -1,0 +1,10 @@
+#version: 1.0.{build}
+environment:
+  matrix:
+  - PLATFORM: WINDOWS
+  - PLATFOR: MACOS
+  - PLATFORM: LINUX
+install:
+- cmd: ./Scripts/install.sh
+build_script:
+- cmd: ./Scripts/build.sh
