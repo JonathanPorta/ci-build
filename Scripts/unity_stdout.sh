@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Display Unity stdout on command line
 # Run using normal options from https://docs.unity3d.com/Manual/CommandLineArguments.html like
 #   ./unity_stdout.sh -batchmode -quit -projectPath \"$(pwd)\" -buildWindows64Player \"build.exe\"
