@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  productGUID: 583732b9765344444aad80325229e9f2
+  productGUID: 0d241b8d618fc0f458b4fbcb2f5be09f
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: UnityProject
+  productName: ci-build
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -387,14 +387,14 @@ PlayerSettings:
   additionalIl2CppArgs: 
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: UnityProject
+  metroPackageName: ci-build
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: UnityProject
+  metroApplicationDescription: ci-build
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -419,7 +419,7 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   tizenDeploymentTarget: 
-  tizenDeploymentTargetType: 0
+  tizenDeploymentTargetType: -1
   tizenMinOSVersion: 1
   n3dsUseExtSaveData: 0
   n3dsCompressStaticMem: 1
