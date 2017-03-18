@@ -27,14 +27,14 @@ if [[ ${unitytemp,,} == *"unity"* ]]; then
   UNITY=$unitytemp
 fi
 
-if [ ! -f "$UNITY" ] && [ "$onpath" != true ]; then
+if [[ ! -f "$UNITY" ]] && [[ $onpath != "true" ]]; then
   echo "Unity does not exist at '$UNITY'"
   echo "Set via UNITY environment variable (e.g. export UNITY=/path/to/Unity.exe)"
   exit -1
 fi
 
 # if /dev/stdout is symlink use that for output otherwise use tail method
-if [ -L /dev/stdout ]; then
+if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
   eval "\"$UNITY\" $@ -logFile /dev/stdout"
   exitcode="$?"
@@ -52,7 +52,7 @@ else
   rm $log 2> /dev/null
 fi
 
-if [ $exitcode != 0 ]; then
+if [[ $exitcode != 0 ]]; then
   echo "Failed!"
 fi
 

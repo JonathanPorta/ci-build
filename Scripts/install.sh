@@ -31,19 +31,19 @@ install() {
   fi
 }
 
-if [ $TRAVIS_OS_NAME == "osx" ]; then
+if [[ $TRAVIS_OS_NAME == "osx" ]]; then
   echo 'Installing Unity on macOS'
 
   install "MacEditorInstaller/Unity.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
-elif [ $APPVEYOR == "True" ]; then
+elif [[ $APPVEYOR == "True" ]]; then
   echo 'Installing Unity on Windows'
 
   install "Windows64EditorInstaller/UnitySetup64.exe"
   install "TargetSupportInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.exe"
   install "TargetSupportInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.exe"
-elif [ $TRAVIS_OS_NAME == "linux" ]; then
+elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # Linux install is a bit different
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'

@@ -2,7 +2,7 @@
 
 project="ci-build"
 
-if [ $PLATFORM == "WINDOWS" ]; then
+if [[ $PLATFORM == "WINDOWS" ]]; then
   echo "Attempting to build $project for Windows"
   ./Scripts/unity_stdout.sh \
     -batchmode \
@@ -11,7 +11,7 @@ if [ $PLATFORM == "WINDOWS" ]; then
     -projectPath $(pwd) \
     -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
     -quit
-elif [ $PLATFORM == "MACOS" ]; then
+elif [[ $PLATFORM == "MACOS" ]]; then
   echo "Attempting to build $project for macOS"
   ./Scripts/unity_stdout.sh \
     -batchmode \
@@ -20,7 +20,7 @@ elif [ $PLATFORM == "MACOS" ]; then
     -projectPath $(pwd) \
     -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
     -quit
-elif [ $PLATFORM == "LINUX" ]; then
+elif [[ $PLATFORM == "LINUX" ]]; then
   echo "Attempting to build $project for Linux"
   ./Scripts/unity_stdout.sh \
     -batchmode \
