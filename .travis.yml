@@ -1,11 +1,11 @@
-language: object-c
+language: generic
 os:
   - linux
   - osx
 env:
   - PLATFORM=WINDOWS
-  - PLATFORM=MACOS
-  - PLATFORM=LINUX
+#  - PLATFORM=MACOS
+#  - PLATFORM=LINUX
 before_install:
   - chmod a+x ./Scripts/install.sh
   - chmod a+x ./Scripts/build.sh
