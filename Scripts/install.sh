@@ -49,8 +49,10 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   #echo 'upgrade all'
   #sudo apt-get upgrade
 
-  echo 'install npm'
-  sudo apt-get install npm
+  echo 'install node'
+  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  sudo apt-get install -y build-essential
 
   echo 'Install Mono'
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
