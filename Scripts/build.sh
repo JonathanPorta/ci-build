@@ -3,7 +3,6 @@
 project="ci-build"
 
 echo "Attempting to build $project for Windows"
-pwd
 ./Scripts/unity_stdout.sh \
   -batchmode \
   -nographics \
@@ -19,7 +18,7 @@ if [ $exitcode != 0 ]; then
 fi
 
 echo "Attempting to build $project for OS X"
-./unity_stdout.sh \
+./Scripts/unity_stdout.sh \
   -batchmode \
   -nographics \
   -silent-crashes \
@@ -34,7 +33,7 @@ if [ $exitcode != 0 ]; then
 fi
 
 echo "Attempting to build $project for Linux"
-./unity_stdout.sh \
+./Scripts/unity_stdout.sh \
   -batchmode \
   -nographics \
   -silent-crashes \
