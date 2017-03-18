@@ -1,13 +1,17 @@
 language: generic
 os: osx
+env:
+  - PLATFORM=WINDOWS
+  - PLATFORM=MACOS
+  - PLATFORM=LINUX
 before_install:
-- chmod a+x ./Scripts/install.sh
-- chmod a+x ./Scripts/build.sh
-- chmod a+x ./Scripts/unity_stdout.sh
+  - chmod a+x ./Scripts/install.sh
+  - chmod a+x ./Scripts/build.sh
+  - chmod a+x ./Scripts/unity_stdout.sh
 install:
-- ./Scripts/install.sh
+  - ./Scripts/install.sh
 script:
-- bash ./Scripts/build.sh
+  - bash ./Scripts/build.sh
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
