@@ -31,4 +31,4 @@ elif [ $PLATFORM == "LINUX" ]; then
     -quit
 fi
 
-exit "$exitcode"
+exit $?

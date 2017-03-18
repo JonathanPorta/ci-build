@@ -37,7 +37,7 @@ if [ $TRAVIS_OS_NAME == "osx" ]; then
   install "MacEditorInstaller/Unity.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
   install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
-elif [ -z ${APPVEYOR+x} ]; then # if $APPVEYOR is set
+elif [ $APPVEYOR == "True" ];
   echo 'Installing Unity on Windows'
 
   install "Windows64EditorInstaller/UnitySetup64.exe"
