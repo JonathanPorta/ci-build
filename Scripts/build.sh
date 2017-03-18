@@ -2,7 +2,7 @@
 
 project="ci-build"
 
-if [ $PLATFORM == "WINDOWS" ]]; then
+if [ $PLATFORM == "WINDOWS" ]; then
   echo "Attempting to build $project for Windows"
   ./Scripts/unity_stdout.sh \
     -batchmode \
@@ -19,7 +19,7 @@ if [ $PLATFORM == "WINDOWS" ]]; then
   fi
 fi
 
-if [ $PLATFORM == "MACOS" ]]; then
+if [ $PLATFORM == "MACOS" ]; then
   echo "Attempting to build $project for macOS"
   ./Scripts/unity_stdout.sh \
     -batchmode \
@@ -36,7 +36,7 @@ if [ $PLATFORM == "MACOS" ]]; then
   fi
 fi
 
-if [ $PLATFORM == "LINUX" ]]; then
+if [ $PLATFORM == "LINUX" ]; then
   echo "Attempting to build $project for Linux"
   ./Scripts/unity_stdout.sh \
     -batchmode \
