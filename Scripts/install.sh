@@ -1,10 +1,14 @@
 #!/bin/bash
 
 if [ $TRAVIS_OS_NAME == "linux" ]; then
+  # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'linux'
+  curl -o `basename install-linux.sh` http://beta.unity3d.com/download/e06241adb51f/unity-editor-installer-5.5.2xf1Linux.sh
+  ./install-linux.sh
 elif [ $TRAVIS_OS_NAME == "osx" ]; then
   # Release details as of 2/24/17: http://download.unity3d.com/download_unity/3829d7f588f3/unity-5.5.2f1-osx.ini
   # Thanks to vergenzt for find this info. Writeup here: https://github.com/JonathanPorta/ci-build/pull/3#issue-132893904
+  # More manual install details at https://docs.unity3d.com/Manual/InstallingUnity.html
   BASE_URL=http://netstorage.unity3d.com/unity
   HASH=3829d7f588f3
   VERSION=5.5.2f1
