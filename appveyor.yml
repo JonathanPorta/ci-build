@@ -2,9 +2,9 @@
 environment:
   matrix:
   - PLATFORM: WINDOWS
-  - PLATFOR: MACOS
+  - PLATFORM: MACOS
   - PLATFORM: LINUX
 install:
-- cmd: ./Scripts/install.sh
+- cmd: Scripts/install.sh
 build_script:
-- cmd: ./Scripts/build.sh
+- cmd: Scripts/build.sh
