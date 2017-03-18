@@ -3,7 +3,8 @@
 project="ci-build"
 
 echo "Attempting to build $project for Windows"
-./unity_stdout.sh \
+pwd
+./Scripts/unity_stdout.sh \
   -batchmode \
   -nographics \
   -silent-crashes \
