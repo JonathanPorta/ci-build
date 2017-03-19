@@ -62,16 +62,15 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   #sudo apt-get install mono-complete gnome-sharp2
   #sudo apt-get install lib32stdc++6 libpq5
 
-  echo 'Installing Unity'
   echo "travis_fold:start:install_unity"
+  echo 'Installing Unity'
   curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   # from http://askubuntu.com/a/841240/310789
-  echo 'try first install'
   sudo dpkg -i unity.deb
   echo "travis_fold:end:install_unity"
 
   echo "travis_fold:start:install_missing_dependencies"
-  echo 'install dep'
+  echo 'Installing missing dependencies'
   sudo apt-get install -f
   #echo 'try second install'
   #sudo dpkg -i unity.deb
