@@ -22,6 +22,8 @@ script:
 cache:
   directories:
   - /Applications/Unity/
+  on:
+    os: osx
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
