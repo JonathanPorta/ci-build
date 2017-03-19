@@ -4,7 +4,7 @@ os:
   - linux
 #  - osx
 node_js:
-  - "6"
+  - "6" # needed for Unity on Linux
 env:
   - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS

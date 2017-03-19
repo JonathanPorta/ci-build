@@ -24,6 +24,8 @@ elif [[ $PLATFORM == "LINUX" ]]; then
   echo "Attempting to build $project for Linux"
   ./Scripts/unity_stdout.sh \
     -batchmode \
+    -username $unity_username \
+    -password $unity_password \
     -force-opengl \
     -silent-crashes \
     -projectPath $(pwd) \
