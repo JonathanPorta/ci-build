@@ -8,8 +8,11 @@
 matrix:
   include:
     - os: osx
-      <<: *osx-cache
       env: PLATFORM=WINDOWS
+      <<: *osx-cache
+    - os: osx
+      env: PLATFORM=MACOS
+      <<: *osx-cache
     - os: linux
       node_js: "6"
       env: PLATFORM=WINDOWS
