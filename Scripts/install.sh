@@ -26,7 +26,7 @@ install() {
   echo "Installing "`basename "$package"`
   if [[ $TRAVIS_OS_NAME == "osx" ]]; then
     sudo installer -dumplog -package `basename "$package"` -target /
-  else
+  else # assume installing windows package
     eval ./`basename "$package"` /S
   fi
 }
@@ -55,10 +55,10 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   echo "travis_fold:start:install_unity"
   echo 'Installing Unity'
   curl -o unity.deb http://beta.unity3d.com/download/e06241adb51f/unity-editor_amd64-5.5.2xf1Linux.deb
-  # from http://askubuntu.com/a/841240/310789
   sudo dpkg -i unity.deb
   echo "travis_fold:end:install_unity"
 
+  # from http://askubuntu.com/a/841240/310789
   echo "travis_fold:start:install_missing_dependencies"
   echo 'Installing missing dependencies'
   sudo apt-get install -f
