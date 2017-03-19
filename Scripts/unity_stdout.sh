@@ -25,7 +25,7 @@ if [ -z ${UNITY+x} ]; then
     fi
   fi
 else
-  setvienv=true
+  setviaenv=true
 fi
 
 # try to remove quotes from variable - needed if environment variable set using quotes
@@ -38,7 +38,7 @@ if [[ ${unitytemp,,} == *"unity"* ]]; then
 fi
 
 if [[ ! -f "$UNITY" ]] && [[ $onpath != "true" ]]; then
-  if [[ $setvienv == "true" ]]; then
+  if [[ $setviaenv == "true" ]]; then
     echo "Unity does not exist at '$UNITY'"
   else
     echo "Unity does not exist at '$unity_windows', '$unity_mac', or '$unity_linux'"
@@ -50,10 +50,10 @@ fi
 # if /dev/stdout is symlink use that for output otherwise use tail method
 if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
-  #todo: not sudo for other systems
   sudo $UNITY $@ -logFile /dev/stdout
   exitcode="$?"
 else
+  # tail should only be needed on Windows
   # get unique file to use for temp log file
   log=`mktemp unity_stdout.XXXX.tmp -u`
   echo "Using $log"
