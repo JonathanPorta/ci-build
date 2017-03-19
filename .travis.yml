@@ -3,10 +3,10 @@
 sudo: required
 language: generic
 os:
-  - linux
+#  - linux
   - osx
-node_js:
-  - "6" # needed for Unity on Linux
+#node_js:
+#  - "6" # needed for Unity on Linux
 env:
   - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS
@@ -19,9 +19,6 @@ install:
   - ./Scripts/install.sh
 script:
   - ./Scripts/build.sh
-cache:
-  directories:
-  - /Applications/Unity/
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
