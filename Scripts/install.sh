@@ -54,7 +54,7 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
 
   echo "travis_fold:start:install_unity"
   echo 'Installing Unity'
-  curl -o unity.deb http://beta.unity3d.com/download/e06241adb51f/unity-editor_amd64-5.5.2xf1Linux.deb
+  curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   sudo dpkg -i unity.deb
   echo "travis_fold:end:install_unity"
 
