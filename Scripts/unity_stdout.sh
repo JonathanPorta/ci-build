@@ -38,10 +38,15 @@ fi
 if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
+  echo '1'
   sudo \"$UNITY -exit\"
+  echo '2'
   sudo $UNITY --help
+  echo '3'
   sudo $UNITY -help
+  echo '4'
   sudo "$UNITY -exit"
+  echo '5'
   sudo $UNITY $@ -logFile /dev/stdout
   exitcode="$?"
 else
