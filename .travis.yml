@@ -1,3 +1,5 @@
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/.travis.yml
+
 sudo: required
 language: generic
 os:

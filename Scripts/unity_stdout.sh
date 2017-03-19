@@ -1,14 +1,14 @@
 #!/bin/bash
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/unity_stdout.sh
 
 # Display Unity stdout on command line
 # Run using normal options from https://docs.unity3d.com/Manual/CommandLineArguments.html like
 #   ./unity_stdout.sh -batchmode -quit -projectPath \"$(pwd)\" -buildWindows64Player \"build.exe\"
 # Initial idea from http://answers.unity3d.com/questions/19566/command-line-feedback.html#answer-155941
-# Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/unity_stdout.sh
 
-unity_linux=/opt/Unity/Editor/Unity
-unity_mac=/Applications/Unity/Unity.app/Contents/MacOS/Unity
 unity_windows=/c/Program\ Files/Unity/Editor/Unity.exe
+unity_mac=/Applications/Unity/Unity.app/Contents/MacOS/Unity
+unity_linux=/opt/Unity/Editor/Unity
 
 # if UNITY not set via environment variable, set it
 if [ -z ${UNITY+x} ]; then

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/install.sh
 
 # Release details and list of available packages as of 2/24/17:
 # - http://download.unity3d.com/download_unity/3829d7f588f3/unity-5.5.2f1-osx.ini

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/build.sh
 
 project="ci-build"
 
