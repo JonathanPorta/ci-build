@@ -47,29 +47,30 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'
 
-  echo 'Installing node'
+  echo 'Installing nodejs'
   # Unity requires it and isn't installing it properly
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
   sudo apt-get install -y nodejs
-  sudo apt-get install -y build-essential
+  #sudo apt-get install -y build-essential
 
-  echo 'Installing Mono'
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-  echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
-  sudo apt-get update
+  #echo 'Installing Mono'
+  #sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  #echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+  #sudo apt-get update
   #sudo apt-get install mono-complete gnome-sharp2
-  sudo apt-get install lib32stdc++6 libpq5
+  #sudo apt-get install lib32stdc++6 libpq5
 
+  echo 'Installing Unity'
   curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   # from http://askubuntu.com/a/841240/310789
   echo 'try first install'
   sudo dpkg -i unity.deb
   echo 'install dep'
   sudo apt-get install -f
-  echo 'try second install'
-  sudo dpkg -i unity.deb
-  echo 'install dep 2'
-  sudo apt-get install -f
+  #echo 'try second install'
+  #sudo dpkg -i unity.deb
+  #echo 'install dep 2'
+  #sudo apt-get install -f
 else
   echo 'Unsupported OS'
   exit -1
