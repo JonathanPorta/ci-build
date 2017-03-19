@@ -37,7 +37,8 @@ fi
 # if /dev/stdout is symlink use that for output otherwise use tail method
 if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
-  eval "\"$UNITY\" $@ -logFile /dev/stdout"
+  #todo: not sudo for other systems
+  sudo eval "\"$UNITY\" $@ -logFile /dev/stdout"
   exitcode="$?"
 else
   # get unique file to use for temp log file
