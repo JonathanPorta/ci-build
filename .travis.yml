@@ -3,6 +3,8 @@ language: generic
 os:
   - linux
 #  - osx
+node_js:
+  - "6"
 env:
   - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS

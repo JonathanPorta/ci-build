@@ -47,13 +47,13 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'
 
-  echo "travis_fold:start:install_nodejs"
-  echo 'Installing nodejs'
-  # Unity requires it and isn't installing it properly
-  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  #sudo apt-get install -y build-essential
-  echo "travis_fold:end:install_nodejs"
+  # echo "travis_fold:start:install_nodejs"
+  # echo 'Installing nodejs'
+  # # Unity requires it and isn't installing it properly
+  # curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  # sudo apt-get install -y nodejs
+  # #sudo apt-get install -y build-essential
+  # echo "travis_fold:end:install_nodejs"
 
   #echo 'Installing Mono'
   #sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
