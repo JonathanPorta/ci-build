@@ -7,10 +7,8 @@
 
 matrix:
   - os: osx
-    env: PLATFORM=WINDOWS
     <<osx-cache
   - os: linux
-    env: PLATFORM=WINDOWS
     node_js: "6"
 
 sudo: required
@@ -20,8 +18,8 @@ language: generic
 #  - osx
 #node_js:
 #  - "6" # needed for Unity on Linux
-#env:
-#  - PLATFORM=WINDOWS
+env:
+  - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS
 #  - PLATFORM=LINUX
 before_install:
