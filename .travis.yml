@@ -7,7 +7,9 @@
 
 matrix:
   - os: osx
-    <<: *osx-cache
+    cache:
+      directories:
+      - /Applications/Unity/
   - os: linux
     node_js: "6"
 
