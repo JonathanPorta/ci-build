@@ -36,6 +36,7 @@ fi
 
 # if /dev/stdout is symlink use that for output otherwise use tail method
 if [[ -L /dev/stdout ]]; then
+  sudo apt-get install glxgears
   sudo glxgears
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
