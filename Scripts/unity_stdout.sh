@@ -6,17 +6,26 @@
 # Initial idea from http://answers.unity3d.com/questions/19566/command-line-feedback.html#answer-155941
 # Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/unity_stdout.sh
 
+unity_linux=/opt/Unity/Editor/Unity
+unity_mac=/Applications/Unity/Unity.app/Contents/MacOS/Unity
+unity_windows=/c/Program\ Files/Unity/Editor/Unity.exe
+
 # if UNITY not set via environment variable, set it
 if [ -z ${UNITY+x} ]; then
   if hash unity 2>/dev/null; then # if unity command found, use that
     UNITY=unity
     onpath=true
   else
-    #todo: set based on platform
-    UNITY=/opt/Unity/Editor/Unity
-    #UNITY=/Applications/Unity/Unity.app/Contents/MacOS/Unity
-    #UNITY=/c/Program\ Files/Unity/Editor/Unity.exe
+    if [[ -f "$unity_mac" ]]; then
+      UNITY=$unity_mac
+    elif [[ -f "$unity_windows" ]]; then
+      UNITY=$unity_windows
+    else
+      UNITY=$unity_linux
+    fi
   fi
+else
+  setvienv=true
 fi
 
 # try to remove quotes from variable - needed if environment variable set using quotes
@@ -29,7 +38,11 @@ if [[ ${unitytemp,,} == *"unity"* ]]; then
 fi
 
 if [[ ! -f "$UNITY" ]] && [[ $onpath != "true" ]]; then
-  echo "Unity does not exist at '$UNITY'"
+  if [[ $setvienv == "true" ]]; then
+    echo "Unity does not exist at '$UNITY'"
+  else
+    echo "Unity does not exist at '$unity_windows', '$unity_mac', or '$unity_linux'"
+  fi
   echo "Set via UNITY environment variable (e.g. export UNITY=/path/to/Unity.exe)"
   exit -1
 fi

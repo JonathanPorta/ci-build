@@ -1,8 +1,8 @@
 sudo: required
 language: generic
 os:
-  - linux
-#  - osx
+#  - linux
+  - osx
 node_js:
   - "6" # needed for Unity on Linux
 env:
