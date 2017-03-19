@@ -40,7 +40,7 @@ if [[ -L /dev/stdout ]]; then
   sudo glxgears
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
-  sudo $UNITY $@ -logFile /dev/stdout
+  sudo $UNITY "$@ -logFile /dev/stdout"
   sudo xvfb-run --server-args="-screen 0 1024x768x24" $UNITY $@ -logFile /dev/stdout -force-opengl
   exitcode="$?"
 else
