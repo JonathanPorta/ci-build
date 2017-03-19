@@ -38,16 +38,9 @@ fi
 if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
-  echo '1'
-  sudo \"$UNITY -exit\"
-  echo '2'
-  sudo $UNITY --help
-  echo '3'
-  sudo $UNITY -help
-  echo '4'
-  sudo "$UNITY -exit"
-  echo '5'
   sudo $UNITY $@ -logFile /dev/stdout
+  # xvfb-run --server-args="-screen 0 1024x768x24" 
+  sudo xvfb-run $UNITY $@ -logFile /dev/stdout
   exitcode="$?"
 else
   # get unique file to use for temp log file
