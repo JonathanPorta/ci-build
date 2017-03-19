@@ -68,10 +68,10 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   sudo dpkg -i unity.deb
   echo 'install dep'
   sudo apt-get install -f
-  echo 'try second install'
-  sudo dpkg -i unity.deb
-  echo 'install dep 2'
-  sudo apt-get install -f
+  #echo 'try second install'
+  #sudo dpkg -i unity.deb
+  #echo 'install dep 2'
+  #sudo apt-get install -f
 else
   echo 'Unsupported OS'
   exit -1
