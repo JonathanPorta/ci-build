@@ -13,6 +13,7 @@ if [[ $PLATFORM == "WINDOWS" ]]; then
     -projectPath $(pwd) \
     -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
     -quit
+  exitcode=$?
   echo "travis_fold:end:build_windows"
 elif [[ $PLATFORM == "MACOS" ]]; then
   echo "travis_fold:start:build_macos"
@@ -24,6 +25,7 @@ elif [[ $PLATFORM == "MACOS" ]]; then
     -projectPath $(pwd) \
     -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
     -quit
+  exitcode=$?
   echo "travis_fold:end:build_macos"
 elif [[ $PLATFORM == "LINUX" ]]; then
   echo "travis_fold:start:build_linux"
@@ -37,7 +39,8 @@ elif [[ $PLATFORM == "LINUX" ]]; then
     -projectPath $(pwd) \
     -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project" \
     -quit
+  exitcode=$?
   echo "travis_fold:end:build_linux"
 fi
 
-exit $?
+exit $exitcode
