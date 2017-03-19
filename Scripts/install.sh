@@ -47,16 +47,9 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # latest Linux Unity details can be found at https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
   echo 'Installing Unity on Linux'
 
-  # echo "travis_fold:start:install_nodejs"
-  # echo 'Installing nodejs'
-  # # Unity requires it and isn't installing it properly
-  # curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-  # sudo apt-get install -y nodejs
-  # echo "travis_fold:end:install_nodejs"
-
   echo "travis_fold:start:install_unity"
   echo 'Installing Unity'
-  curl -o unity.deb http://download.unity3d.com/download_unity/linux/unity-editor-5.3.0f4+20151218_amd64.deb
+  curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   # from http://askubuntu.com/a/841240/310789
   sudo dpkg -i unity.deb
   echo "travis_fold:end:install_unity"
