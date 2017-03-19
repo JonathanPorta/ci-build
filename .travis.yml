@@ -8,14 +8,13 @@
 matrix:
   include:
     - os: osx
-      cache:
-        directories:
-        - /Applications/Unity/
+      <<: *osx-cache
+      language: generic
     - os: linux
       node_js: "6"
 
 sudo: required
-language: generic
+#language: generic
 #os:
 #  - linux
 #  - osx
@@ -23,7 +22,7 @@ language: generic
 #  - "6" # needed for Unity on Linux
 env:
   - PLATFORM=WINDOWS
-#  - PLATFORM=MACOS
+  - PLATFORM=MACOS
 #  - PLATFORM=LINUX
 before_install:
   - chmod a+x ./Scripts/install.sh
