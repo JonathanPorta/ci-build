@@ -7,7 +7,7 @@
 
 matrix:
   - os: osx
-    <<osx-cache
+    <<: *osx-cache
   - os: linux
     node_js: "6"
 
