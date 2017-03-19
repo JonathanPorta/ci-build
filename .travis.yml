@@ -3,10 +3,10 @@
 sudo: required
 language: generic
 os:
-#  - linux
+  - linux
   - osx
-#node_js:
-#  - "6" # needed for Unity on Linux
+node_js:
+  - "6" # needed for Unity on Linux
 env:
   - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS
