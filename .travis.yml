@@ -1,7 +1,7 @@
 sudo: required
 language: generic
 os:
-  - linux
+#  - linux
   - osx
 env:
   - PLATFORM=WINDOWS

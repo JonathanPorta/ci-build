@@ -53,7 +53,7 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   # Unity requires it and isn't installing it properly
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
   sudo apt-get install -y nodejs
-  sudo apt-get install -y build-essential
+  #sudo apt-get install -y build-essential
 
   echo 'Installing Mono'
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -64,8 +64,6 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
 
   curl -o unity.deb http://beta.unity3d.com/download/b9488c3b1f9f/unity-editor_amd64-5.6.0xb10Linux.deb
   # from http://askubuntu.com/a/841240/310789
-  echo 'package contents'
-  sudo dpkg --contents unity.deb
   echo 'try first install'
   sudo dpkg -i unity.deb
   echo 'install dep'
@@ -74,9 +72,6 @@ elif [[ $TRAVIS_OS_NAME == "linux" ]]; then
   sudo dpkg -i unity.deb
   echo 'install dep 2'
   sudo apt-get install -f
-
-  #curl -o `basename install-linux.sh` http://beta.unity3d.com/download/e06241adb51f/unity-editor-installer-5.5.2xf1Linux.sh
-  #./install-linux.sh
 else
   echo 'Unsupported OS'
   exit -1
