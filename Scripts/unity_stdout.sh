@@ -36,11 +36,11 @@ fi
 
 # if /dev/stdout is symlink use that for output otherwise use tail method
 if [[ -L /dev/stdout ]]; then
-  sudo apt-get install glxgears
-  sudo glxgears
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
+  echo '1'
   sudo $UNITY "$@ -logFile /dev/stdout"
+  echo '2'
   sudo xvfb-run --server-args="-screen 0 1024x768x24" $UNITY $@ -logFile /dev/stdout -force-opengl
   exitcode="$?"
 else
