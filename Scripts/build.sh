@@ -24,7 +24,7 @@ elif [[ $PLATFORM == "LINUX" ]]; then
   echo "Attempting to build $project for Linux"
   ./Scripts/unity_stdout.sh \
     -batchmode \
-    -nographics \
+    -force-opengl \
     -silent-crashes \
     -projectPath $(pwd) \
     -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project" \
