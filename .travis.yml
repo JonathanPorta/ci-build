@@ -1,14 +1,27 @@
 # Source: https://github.com/JonathanPorta/ci-build/tree/master/.travis.yml
 
+.osx-cache: &osx-cache
+  cache:
+    directories:
+    - /Applications/Unity/
+
+matrix:
+  - os: osx
+    env: PLATFORM=WINDOWS
+    <<osx-cache
+  - os: linux
+    env: PLATFORM=WINDOWS
+    node_js: "6"
+
 sudo: required
 language: generic
-os:
-  - linux
-  - osx
-node_js:
-  - "6" # needed for Unity on Linux
-env:
-  - PLATFORM=WINDOWS
+#os:
+#  - linux
+#  - osx
+#node_js:
+#  - "6" # needed for Unity on Linux
+#env:
+#  - PLATFORM=WINDOWS
 #  - PLATFORM=MACOS
 #  - PLATFORM=LINUX
 before_install:
@@ -19,11 +32,6 @@ install:
   - ./Scripts/install.sh
 script:
   - ./Scripts/build.sh
-cache:
-  directories:
-  - /Applications/Unity/
-  on:
-    os: osx
 deploy:
   provider: s3
   access_key_id: AKIAITEPAI7MBUKSYRMQ
