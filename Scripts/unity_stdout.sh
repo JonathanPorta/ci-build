@@ -38,7 +38,7 @@ fi
 if [[ -L /dev/stdout ]]; then
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
-  sudo eval "\"$UNITY\" $@ -logFile /dev/stdout"
+  sudo "\"$UNITY\" $@ -logFile /dev/stdout"
   exitcode="$?"
 else
   # get unique file to use for temp log file
