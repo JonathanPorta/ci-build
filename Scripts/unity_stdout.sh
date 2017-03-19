@@ -36,11 +36,11 @@ fi
 
 # if /dev/stdout is symlink use that for output otherwise use tail method
 if [[ -L /dev/stdout ]]; then
+  sudo glxgears
   echo "Using /dev/stdout"
   #todo: not sudo for other systems
   sudo $UNITY $@ -logFile /dev/stdout
-  # xvfb-run --server-args="-screen 0 1024x768x24" 
-  sudo xvfb-run $UNITY $@ -logFile /dev/stdout
+  sudo xvfb-run --server-args="-screen 0 1024x768x24" $UNITY $@ -logFile /dev/stdout -force-opengl
   exitcode="$?"
 else
   # get unique file to use for temp log file
