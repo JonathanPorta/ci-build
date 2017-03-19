@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  productGUID: fa50c6dca7a9ed04d97768ff599a8fc7
+  productGUID: dd3506a4cc8f7d14391ee5dfd385ba3c
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
