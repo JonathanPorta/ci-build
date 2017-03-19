@@ -1,16 +1,16 @@
 # Source: https://github.com/JonathanPorta/ci-build/tree/master/.travis.yml
 
-#sudo: required
+sudo: required
 language: generic
 os:
-#  - linux
+  - linux
   - osx
-#node_js:
-#  - "6" # needed for Unity on Linux
+node_js:
+  - "6" # needed for Unity on Linux
 env:
   - PLATFORM=WINDOWS
-  - PLATFORM=MACOS
-  - PLATFORM=LINUX
+#  - PLATFORM=MACOS
+#  - PLATFORM=LINUX
 before_install:
   - chmod a+x ./Scripts/install.sh
   - chmod a+x ./Scripts/build.sh
