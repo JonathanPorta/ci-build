@@ -34,9 +34,13 @@ install() {
 if [[ $TRAVIS_OS_NAME == "osx" ]]; then
   echo 'Installing Unity on macOS'
 
-  install "MacEditorInstaller/Unity.pkg"
-  install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
-  install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
+  if [[ -d "/Applications/Unity/" ]]; then
+    echo 'Already installed'
+  else
+    install "MacEditorInstaller/Unity.pkg"
+    install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
+    install "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION.pkg"
+  fi
 elif [[ $APPVEYOR == "True" ]]; then
   echo 'Installing Unity on Windows'
 
