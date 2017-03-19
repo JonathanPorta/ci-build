@@ -10,21 +10,21 @@ matrix:
     - os: osx
       env: PLATFORM=WINDOWS
       <<: *osx-cache
-    - os: osx
-      env: PLATFORM=MACOS
-      <<: *osx-cache
-    - os: osx
-      env: PLATFORM=LINUX
-      <<: *osx-cache
+    # - os: osx
+    #   env: PLATFORM=MACOS
+    #   <<: *osx-cache
+    # - os: osx
+    #   env: PLATFORM=LINUX
+    #   <<: *osx-cache
     - os: linux
       node_js: "6"
       env: PLATFORM=WINDOWS
-    - os: linux
-      node_js: "6"
-      env: PLATFORM=MACOS
-    - os: linux
-      node_js: "6"
-      env: PLATFORM=LINUX
+    # - os: linux
+    #   node_js: "6"
+    #   env: PLATFORM=MACOS
+    # - os: linux
+    #   node_js: "6"
+    #   env: PLATFORM=LINUX
 
 sudo: required
 language: generic
