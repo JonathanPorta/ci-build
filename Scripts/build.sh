@@ -1,6 +1,12 @@
 #!/bin/bash
 # Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/build.sh
 
+echo 'ping'
+ping core.cloud.unity3d.com
+
+echo "Download unity package list"
+curl -X GET 'https://core.cloud.unity3d.com/api/login' -v
+
 project="ci-build"
 
 if [[ $PLATFORM == "WINDOWS" ]]; then
