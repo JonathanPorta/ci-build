@@ -1,0 +1,74 @@
+#!/bin/bash
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/Scripts/unity_stdout.sh
+
+# Display Unity stdout on command line
+# Run using normal options from https://docs.unity3d.com/Manual/CommandLineArguments.html like
+#   ./unity_stdout.sh -batchmode -quit -projectPath \"$(pwd)\" -buildWindows64Player \"build.exe\"
+# Initial idea from http://answers.unity3d.com/questions/19566/command-line-feedback.html#answer-155941
+
+unity_windows=/c/Program\ Files/Unity/Editor/Unity.exe
+unity_mac=/Applications/Unity/Unity.app/Contents/MacOS/Unity
+unity_linux=/opt/Unity/Editor/Unity
+
+# if UNITY not set via environment variable, set it
+if [ -z ${UNITY+x} ]; then
+  if hash unity 2>/dev/null; then # if unity command found, use that
+    UNITY=unity
+    onpath=true
+  else
+    if [[ -f "$unity_mac" ]]; then
+      UNITY=$unity_mac
+    elif [[ -f "$unity_windows" ]]; then
+      UNITY=$unity_windows
+    else
+      UNITY=$unity_linux
+    fi
+  fi
+else
+  setviaenv=true
+fi
+
+# try to remove quotes from variable - needed if environment variable set using quotes
+unitytemp=`eval printf $UNITY`
+
+# if unitytemp still contains Unity file set it as path
+# convert to lowercase before check
+if [[ ${unitytemp,,} == *"unity"* ]]; then
+  UNITY=$unitytemp
+fi
+
+if [[ ! -f "$UNITY" ]] && [[ $onpath != "true" ]]; then
+  if [[ $setviaenv == "true" ]]; then
+    echo "Unity does not exist at '$UNITY'"
+  else
+    echo "Unity does not exist at '$unity_windows', '$unity_mac', or '$unity_linux'"
+  fi
+  echo "Set via UNITY environment variable (e.g. export UNITY=/path/to/Unity.exe)"
+  exit -1
+fi
+
+# if /dev/stdout is symlink use that for output otherwise use tail method
+if [[ -L /dev/stdout ]]; then
+  echo "Using /dev/stdout"
+  sudo $UNITY $@ -logFile /dev/stdout
+  exitcode="$?"
+else
+  # tail should only be needed on Windows
+  # get unique file to use for temp log file
+  log=`mktemp unity_stdout.XXXX.tmp -u`
+  echo "Using $log"
+
+  tail -F $log 2> /dev/null &
+  eval "\"$UNITY\" $@ -logFile $log"
+  exitcode="$?"
+  sleep 5s # wait for tail to catchup
+  kill %1 # stop tailing
+  wait %1 2> /dev/null # hide terminated message
+  rm $log 2> /dev/null
+fi
+
+if [[ $exitcode != 0 ]]; then
+  echo "Failed!"
+fi
+
+exit "$exitcode"

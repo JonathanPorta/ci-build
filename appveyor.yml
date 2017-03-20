@@ -1,0 +1,12 @@
+# Source: https://github.com/JonathanPorta/ci-build/tree/master/appveyor.yml
+
+#version: 1.0.{build}
+environment:
+  matrix:
+  - PLATFORM: WINDOWS
+  - PLATFORM: MACOS
+  - PLATFORM: LINUX
+install:
+- cmd: bash Scripts/install.sh
+build_script:
+- cmd: bash Scripts/build.sh
