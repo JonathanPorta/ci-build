@@ -14,7 +14,8 @@ deploy:
   api_key:
     secure: AXx8+q/jPCUAAgp8SdyHG/PSkP+f0rROMlk3XBIObOXVxJWG+u79ulvOtSZ96adP/q6kqs3BK1xy5/Z7vZvqEAZ3FnHNWuXLgdWNZomhns/iyfjeJsV5LAA2bEJLTqjhV+02mFhYELWid5g7G2URjSG/bk5MQLuBZPg77bi5W5ma+IfqtwuiX/gF+7EngCnezPmsJ9sXLBqsS7pRV/QySYePcDsncdqR+ljvAgC3TPER3Hw+jnilFaIzW9vF1h7sqo5QQ8/c7XBjBswVwligF7oy6dkdZdeLtC0//pkKGvfKKijMwy1Mxo/VFO5L3MEA85SwBK2A+dgU8ugsEv4F0fAonsAv7wjin9zU7rdOKCwf7PuTO2VlVkGgKRkU19odsQyfPHGERwyoPJ8iqF5DsjpEthHdf/F4o5UWUYzB2tGXAD7I52RXRkj2uYiiF2FjB4ntB8rWTzy+HfKfEl2OS8bB8Qi2G7GU4INw7UXtKD7TZ+P5HezeqdziRjCkerFNCTH4W2TVzH67WQV9gbmSYFBMKhE0fTBBSJMKJExHBs/EeFetfmRzPXRCMTu92PAYGppeRj1mbG/mCg+EWlirdDUUCM2MRxCJt1lhAJV29y9sfWsYT25rcAshMaWrNLwUfMg8mwOfIBsmOv9PELXEaP3FvXPggNR1z4uR7l6VCcA=
   file_glob: true
-  file: Build/*
-
+  file: "Build/*"
+  skip_cleanup: true
   on:
+    tags: true
     repo: jonanh/ci-build
