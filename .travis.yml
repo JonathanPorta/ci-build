@@ -3,16 +3,23 @@
 language: objective-c
 osx_image: xcode61
 rvm:
-- 2.1.2
+  - 2.1.2
+
 before_install:
-- brew update
-- brew cask install unity unity-ios-support-for-editor
-#- chmod a+x ./Scripts/install.sh
-- chmod a+x ./Scripts/build.sh
-install:
-- "./Scripts/install.sh"
+  - brew update
+  - brew cask install unity unity-ios-support-for-editor
+  - chmod a+x ./Scripts/build.sh
+
 script:
-- "./Scripts/build.sh"
+  - /Applications/Unity/Unity.app/Contents/MacOS/Unity \
+    -batchmode \
+    -nographics \
+    -silent-crashes \
+    -logFile $(pwd)/unity-osx.log \
+    -projectPath $(pwd) \
+    -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
+    -quit
+
 deploy:
   provider: releases
   api_key:
